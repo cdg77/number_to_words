@@ -24,17 +24,19 @@ class Fixnum
     english_number = zero_to_one_hundred.fetch(self_string)
     return english_number
   end
-
+  idx = 0
   self_array.each() do |digit|
-    if self_array[(self_length-1)] == digit
+    if idx == (self_length - 1)
       english_number_part = zero_to_one_hundred.fetch(digit)
       english_number_array.push(english_number_part)
+      idx = idx + 1
     else
       english_number_part = number_prefix.fetch(digit)
       english_number_array.push(english_number_part)
+      idx = idx + 1
     end
   end
-  
+
   english_number = english_number_array.join(" ")
   return english_number
 end
