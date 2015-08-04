@@ -10,4 +10,7 @@ describe('Fixnum#numbers') do
     expect(21.numbers()).to(eq("twenty one"))
   end
 
+  it('returns the value back for 450 in english') do
+    expect(450.numbers()).to(eq("four hundred fifty"))
+  end
 end
